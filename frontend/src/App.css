@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: #fbf8ff;
+  color: #191b24;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #fbf8ff;
+}
+
+/* ── Nav ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  height: 64px;
+  background: rgba(251, 248, 255, 0.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid #e7e7f4;
+  flex-shrink: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 24px rgba(46, 91, 255, 0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  font-style: italic;
+  color: #2e5bff;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.logo-dot {
+  display: none;
+}
+
+.count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #2e5bff;
+  background: #dde1ff;
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f3f2ff;
+  border: 1px solid #e2e1ef;
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+
+.search-wrap .material-symbols-outlined {
+  font-size: 18px;
+  color: #747688;
+}
+
+.search {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #191b24;
+  width: 200px;
+}
+
+.search::placeholder {
+  color: #747688;
+}
+
+/* ── Live scrape indicator ── */
+.scrape-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 3px 10px 3px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+}
+
+.scrape-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulse-dot 1.2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── Body ── */
+.body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Error / Location Banners ── */
+.error-banner {
+  background: #fff3cd;
+  border-bottom: 1px solid #ffc107;
+  color: #856404;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  z-index: 999;
+}
+
+.location-banner {
+  position: fixed;
+  bottom: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(25, 27, 36, 0.85);
+  backdrop-filter: blur(12px);
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 7px 14px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 1001;
+  pointer-events: auto;
+}
+
+.error-retry {
+  margin-left: 8px;
+  padding: 3px 10px;
+  background: #856404;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.error-dismiss {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(25, 27, 36, 0.85);
+  backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 1000;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.bookmark-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1.5px solid #f59e0b;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.bookmark-count:hover {
+  background: #fde68a;
+}
+
+@media (max-width: 768px) {
+  .disclaimer {
+    display: none;
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 600;
+  }
+}
+

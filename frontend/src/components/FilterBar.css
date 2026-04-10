@@ -1,0 +1,95 @@
+/* frontend/src/components/FilterBar.css */
+.filter-bar {
+  padding: 10px 16px 8px;
+  border-bottom: 1px solid #ededfa;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fbf8ff;
+  flex-shrink: 0;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-row-bottom {
+  flex-wrap: wrap;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.filter-chips.scrollable {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.filter-chips.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1.5px solid #e2e1ef;
+  background: #fff;
+  color: #434656;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.12s;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.chip:hover {
+  border-color: #2e5bff;
+  color: #2e5bff;
+}
+
+.chip-active {
+  background: #2e5bff;
+  border-color: #2e5bff;
+  color: #fff;
+}
+
+.chip-source {
+  text-transform: capitalize;
+}
+
+.chip-reset {
+  border-color: #e2e1ef;
+  color: #747688;
+  margin-left: auto;
+}
+
+.chip-reset:hover {
+  border-color: #ba1a1a;
+  color: #ba1a1a;
+}
+
+.exp-select {
+  padding: 4px 10px;
+  border: 1.5px solid #e2e1ef;
+  border-radius: 999px;
+  background: #fff;
+  color: #434656;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23747688'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}

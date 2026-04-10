@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+playwright
+beautifulsoup4
+requests
+httpx
+aiohttp
+python-multipart
